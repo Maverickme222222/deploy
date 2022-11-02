@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-emails-app-dev
+  name: helm-users-app-dev
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-emails-dev
+    namespace: helm-users-dev
     name: in-cluster
   project: appbundle-project-dev
   source:
     path: kustomized_helm/overlays/dev
-    repoURL: https://github.com/Maverickme222222/emails
+    repoURL: https://github.com/Maverickme222222/users
     targetRevision: HEAD
     plugin:
       name: kustomized-helm
