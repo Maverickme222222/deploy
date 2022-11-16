@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-appbundle-app-dev
+  name: emails-app
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -11,6 +11,6 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: argocd/subapps
+    path: services/emails
     repoURL: https://github.com/Maverickme222222/deploy
     targetRevision: HEAD
